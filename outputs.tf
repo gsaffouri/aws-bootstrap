@@ -1,21 +1,23 @@
+# Outputs for the Terraform configuration
+
 output "vpc_id" {
-  description = "The ID of the VPC"
-  value       = aws_vpc.vpc.id
+  description = "The ID of the created VPC"
+  value       = module.vpc.vpc_id
 }
 
 output "private_subnet_ids" {
-  description = "IDs of the private subnets"
-  value       = [for subnet in aws_subnet.private : subnet.id]
+  description = "List of private subnet IDs"
+  value       = module.vpc.private_subnets
 }
 
 output "public_subnet_ids" {
-  description = "IDs of the public subnets"
-  value       = [for subnet in aws_subnet.public : subnet.id]
+  description = "List of public subnet IDs"
+  value       = module.vpc.public_subnets
 }
 
 output "s3_bucket_name" {
   description = "Name of the S3 bucket used for remote state"
-  value       = aws_s3_bucket.terraform_state.id
+  value       = aws_s3_bucket.this_s3_bucket.bucket
 }
 
 output "dynamodb_table_name" {
