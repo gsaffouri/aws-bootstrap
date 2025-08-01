@@ -27,9 +27,3 @@ output "region" {
   description = "AWS region in use"
   value       = "us-east-1" 
 }
-
-# Optional: If you have an IAM role for GitHub OIDC
-output "oidc_role_arn" {
-  description = "IAM Role ARN assumed by GitHub Actions via OIDC"
-  value       = aws_iam_role.github_oidc.arn
-}
