@@ -58,3 +58,44 @@ Make sure you have the following installed and configured:
    ```bash
    git clone https://github.com/YOUR_USERNAME/tf-bootstrap.git
    cd tf-bootstrap
+
+---
+
+## 👨‍💻 About the Author
+
+Built and maintained with 💚 by [Gorilla](https://github.com/YOUR_USERNAME)  
+DevOps Engineer • Terraform Tamer • Kubernetes Commander 🐾
+
+---
+
+## 🛠️ Built With
+
+- 🧱 [Terraform](https://www.terraform.io/)
+- ☁️ [AWS](https://aws.amazon.com/)
+- 🐳 [Kubernetes (EKS)](https://aws.amazon.com/eks/)
+- ⚙️ [GitHub Actions](https://docs.github.com/en/actions)
+
+---
+
+## 🤝 Contributing
+
+Contributions, suggestions, and GitOps-style PRs are welcome!
+
+If you find a bug, or want to add a feature — feel free to open an issue or submit a pull request.  
+Let’s build something epic together 🚀
+
+---
+
+## 📬 Contact
+
+Want to connect, collab, or just vibe about infra?
+
+📫 **Email**: your.email@example.com  
+🐙 **GitHub**: [@YOUR_USERNAME](https://github.com/YOUR_USERNAME)  
+📎 **LinkedIn**: [linkedin.com/in/YOUR_LINK](https://linkedin.com/in/YOUR_LINK)
+
+---
+
+<p align="center">
+  <em>“Infrastructure as Code, Certified as Badass.”</em> 💥
+</p>
