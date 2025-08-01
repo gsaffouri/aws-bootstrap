@@ -25,5 +25,5 @@ output "dynamodb_table_name" {
 
 output "region" {
   description = "AWS region in use"
-  value       = "us-east-1" 
+  value       = "us-east-1"
 }
