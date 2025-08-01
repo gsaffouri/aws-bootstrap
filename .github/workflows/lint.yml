@@ -14,12 +14,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout repo
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: ⚙️ Set up Terraform
+      - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 1.6.6 # change if needed
+          terraform_version: 1.6.6
 
-      - name: 🧪 Terraform
+      - name: Terraform Init
+        run: terraform init -backend=false
+
+      - name: Check Terraform Formatting
+        run: terraform fmt -check -recursive
+
+      - name: Validate Terraform Code
+        run: terraform validate
