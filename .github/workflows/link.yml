@@ -1,0 +1,25 @@
+name: Lint Terraform
+
+on:
+  push:
+    paths:
+      - '**.tf'
+  pull_request:
+    paths:
+      - '**.tf'
+
+jobs:
+  lint:
+    name: Terraform Fmt and Validate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repo
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.6 # change if needed
+
+      - name: 🧪 Terraform
