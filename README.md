@@ -1,7 +1,7 @@
 # 🚀 Terraform AWS Bootstrap for EKS
 
 <p align="center">
-  <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/actions">
+  <a href="https://github.com/gsaffouri/aws-bootstrap/actions">
     <img src="https://img.shields.io/github/actions/workflow/status/YOUR_USERNAME/YOUR_REPO/deploy.yml?branch=main&label=CI%2FCD&logo=githubactions&style=flat-square" alt="GitHub Actions">
   </a>
   <img src="https://img.shields.io/badge/Terraform-1.5%2B-blueviolet?logo=terraform&style=flat-square" alt="Terraform Version">
