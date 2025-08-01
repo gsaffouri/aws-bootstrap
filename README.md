@@ -90,9 +90,9 @@ Let’s build something epic together 🚀
 
 Want to connect, collab, or just vibe about infra?
 
-📫 **Email**: your.email@example.com  
-🐙 **GitHub**: [@YOUR_USERNAME](https://github.com/YOUR_USERNAME)  
-📎 **LinkedIn**: [linkedin.com/in/YOUR_LINK](https://linkedin.com/in/YOUR_LINK)
+📫 **Email**: g.saffouri@outlook.com  
+🐙 **GitHub**: [@gsaffouri](https://github.com/gsaffouri)  
+📎 **LinkedIn**: [linkedin.com/in/YOUR_LINK](https://linkedin.com/in/saffouri)
 
 ---
 
