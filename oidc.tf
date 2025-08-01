@@ -6,5 +6,5 @@ module "oidc-github" {
     "your-gh-org-or-user/your-eks-repo:ref:refs/heads/main"
   ]
 
-  attach_admin_policy = true # or false if you're defining fine-grained IAM later
+  attach_admin_policy = true # or false if you're defining fine-grained IAM later 
 }
