@@ -20,6 +20,7 @@ provider "aws" {
 resource "aws_s3_bucket" "this_s3_bucket" {
   bucket        = "my-tf-state-bucket-08040627"
   force_destroy = true
+  region = "us-east-1"
 
   tags = {
     Name = "Terraform State Bucket"
@@ -81,4 +82,29 @@ resource "aws_dynamodb_table" "terraform_locks" {
     Environment = "dev"
     Terraform   = "true"
   }
+}
+
+resource "aws_iam_policy" "oidc_management_policy" {
+  name        = "AllowOIDCProviderManagement"
+  description = "Allows managing OIDC providers (needed for IRSA / GitHub OIDC)"
+  policy      = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Effect = "Allow",
+        Action = [
+          "iam:CreateOpenIDConnectProvider",
+          "iam:GetOpenIDConnectProvider",
+          "iam:DeleteOpenIDConnectProvider",
+          "iam:UpdateOpenIDConnectProviderThumbprint"
+        ],
+        Resource = "*"
+      }
+    ]
+  })
+}
+
+resource "aws_iam_user_policy_attachment" "cloud_user_oidc_attachment" {
+  user       = "cloud_user"
+  policy_arn = aws_iam_policy.oidc_management_policy.arn
 }
