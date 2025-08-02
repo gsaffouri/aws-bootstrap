@@ -16,7 +16,7 @@
 
 ## 📦 Overview
 
-This repository bootstraps an AWS account using Terraform to prepare it for a future EKS (Elastic Kubernetes Service) deployment. It sets up foundational AWS infrastructure and services required for secure, versioned, and lockable Terraform state management, as well as networking primitives via a VPC module.
+This repository bootstraps an AWS account using Terraform to prepare it for a future EKS (Elastic Kubernetes Service) deployment. It sets up foundational AWS infrastructure and services required for secure, versioned, and lockable Terraform state management, as well as networking primitives via a VPC module..
 
 ---
 
