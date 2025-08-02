@@ -6,7 +6,7 @@ module "oidc-github" {
     "gsaffouri/eks-deployment:ref:refs/heads/main"
   ]
 
-  attach_admin_policy = true 
+  attach_admin_policy = true
 
 }
 
@@ -23,7 +23,7 @@ resource "aws_iam_role" "terraform_oidc_admin" {
       {
         Effect = "Allow",
         Principal = {
-          AWS = "arn:aws:iam::058264314541:user/cloud_user"  # 👈 or another user/role who runs Terraform
+          AWS = "arn:aws:iam::058264314541:user/cloud_user" # 👈 or another user/role who runs Terraform
         },
         Action = "sts:AssumeRole"
       }
@@ -38,7 +38,7 @@ resource "aws_iam_role" "terraform_oidc_admin" {
 resource "aws_iam_policy" "oidc_admin_policy" {
   name        = "OIDCAdminPolicy"
   description = "Allows managing IAM OIDC provider and related resources"
-  policy      = jsonencode({
+  policy = jsonencode({
     Version = "2012-10-17",
     Statement = [
       {
@@ -74,8 +74,8 @@ resource "aws_iam_policy" "assume_oidc_admin_role_policy" {
     Version = "2012-10-17",
     Statement = [
       {
-        Effect = "Allow",
-        Action = "sts:AssumeRole",
+        Effect   = "Allow",
+        Action   = "sts:AssumeRole",
         Resource = aws_iam_role.terraform_oidc_admin.arn
       }
     ]

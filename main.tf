@@ -20,7 +20,7 @@ provider "aws" {
 resource "aws_s3_bucket" "this_s3_bucket" {
   bucket        = "my-tf-state-bucket-08040627"
   force_destroy = true
-  region = "us-east-1"
+  region        = "us-east-1"
 
   tags = {
     Name = "Terraform State Bucket"
