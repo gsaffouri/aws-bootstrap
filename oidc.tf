@@ -56,4 +56,9 @@ resource "aws_iam_role_policy_attachment" "attach_oidc_admin_policy" {
   policy_arn = aws_iam_policy.oidc_admin_policy.arn
 }
 
+aws sts assume-role \
+  --role-arn arn:aws:iam::058264314541:role/TerraformOIDCAdminRole \
+  --role-session-name tf-session
+  # 👈 Use this command to assume the role and run Terraform commands with OIDC permissions
+
 
