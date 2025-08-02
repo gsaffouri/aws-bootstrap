@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/badge/AWS%20Ready-%E2%9C%85-green?logo=amazonaws&style=flat-square" alt="AWS Ready">
   <img src="https://img.shields.io/badge/AWS%20Certified-%F0%9F%94%A5-orange?style=flat-square" alt="AWS Certified">
   <img src="https://img.shields.io/badge/Certified%20CKA-%F0%9F%8F%86-blue?style=flat-square" alt="CKA Certified">
-  <img src="https://img.shields.io/github/license/YOUR_USERNAME/YOUR_REPO?style=flat-square" alt="License">
+  <img src="https://img.shields.io/github/license/gsaffouri_x/aws-bootstrap?style=flat-square" alt="License">
   <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome">
 </p>
 
