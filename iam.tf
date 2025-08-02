@@ -11,7 +11,7 @@ resource "aws_iam_role" "terraform_oidc_admin" {
       {
         Effect = "Allow",
         Principal = {
-          AWS = "arn:aws:iam::058264314541:user/cloud_user" # 👈 or another user/role who runs Terraform
+          AWS = "arn:aws:iam::058264314541:user/cloud_user" # 👈 or another user/role who runs Terraform.
         },
         Action = "sts:AssumeRole"
       }
