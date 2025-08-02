@@ -6,7 +6,7 @@ module "oidc-github" {
     "gsaffouri/eks-deployment:ref:refs/heads/main"
   ]
 
-  attach_admin_policy = true # or false if you're defining fine-grained IAM later 
+  attach_admin_policy = true 
 
 }
 
@@ -33,7 +33,7 @@ resource "aws_iam_policy" "oidc_management_policy" {
 
 # Attach the OIDC permissions policy to the IAM user (e.g., cloud_user)
 resource "aws_iam_user_policy_attachment" "cloud_user_oidc_attachment" {
-  user       = "cloud_user" # 👈 Update if your user is named differently
+  user       = "cloud_user" 
   policy_arn = aws_iam_policy.oidc_management_policy.arn
 }
 
