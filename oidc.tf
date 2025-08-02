@@ -10,6 +10,10 @@ module "oidc-github" {
 
 }
 
+# IAM Role for Terraform OIDC Admin
+# This role can be assumed by a user or another role that runs Terraform commands
+# It allows managing OIDC providers and related IAM resources
+# Make sure to replace the Principal with the correct user or role ARN that will run Terraform
 resource "aws_iam_role" "terraform_oidc_admin" {
   name = "TerraformOIDCAdminRole"
 
@@ -27,6 +31,10 @@ resource "aws_iam_role" "terraform_oidc_admin" {
   })
 }
 
+# IAM Policy for OIDC Admin
+# This policy grants permissions to manage OIDC providers and related IAM resources
+# Adjust the actions and resources as needed based on your requirements
+# Ensure that the policy is attached to the role created above
 resource "aws_iam_policy" "oidc_admin_policy" {
   name        = "OIDCAdminPolicy"
   description = "Allows managing IAM OIDC provider and related resources"
@@ -51,14 +59,12 @@ resource "aws_iam_policy" "oidc_admin_policy" {
   })
 }
 
+# Attach the OIDC Admin policy to the role
 resource "aws_iam_role_policy_attachment" "attach_oidc_admin_policy" {
   role       = aws_iam_role.terraform_oidc_admin.name
   policy_arn = aws_iam_policy.oidc_admin_policy.arn
 }
 
-aws sts assume-role \
-  --role-arn arn:aws:iam::058264314541:role/TerraformOIDCAdminRole \
-  --role-session-name tf-session
-  # 👈 Use this command to assume the role and run Terraform commands with OIDC permissions
+
 
 
