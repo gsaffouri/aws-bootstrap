@@ -16,7 +16,7 @@ provider "aws" {
   region = "us-east-1"
 }
 
-# Create an S3 bucket for Terraform state management
+# Create an S3 bucket for Terraform state managements
 resource "aws_s3_bucket" "this_s3_bucket" {
   bucket        = "my-tf-state-bucket-${random_id.this.hex}"
   force_destroy = true
