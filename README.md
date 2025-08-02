@@ -101,5 +101,5 @@ Want to connect, collab, or just vibe about infra?
 ---
 
 <p align="center">
-  <em>“I have no failed, I just found 10,000 ways that do not work.”</em> 💥
+  <em>“I have not failed, I just found 10,000 ways that do not work.”</em> 💥
 </p>
