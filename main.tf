@@ -84,27 +84,3 @@ resource "aws_dynamodb_table" "terraform_locks" {
   }
 }
 
-resource "aws_iam_policy" "oidc_management_policy" {
-  name        = "AllowOIDCProviderManagement"
-  description = "Allows managing OIDC providers (needed for IRSA / GitHub OIDC)"
-  policy      = jsonencode({
-    Version = "2012-10-17",
-    Statement = [
-      {
-        Effect = "Allow",
-        Action = [
-          "iam:CreateOpenIDConnectProvider",
-          "iam:GetOpenIDConnectProvider",
-          "iam:DeleteOpenIDConnectProvider",
-          "iam:UpdateOpenIDConnectProviderThumbprint"
-        ],
-        Resource = "*"
-      }
-    ]
-  })
-}
-
-resource "aws_iam_user_policy_attachment" "cloud_user_oidc_attachment" {
-  user       = "cloud_user"
-  policy_arn = aws_iam_policy.oidc_management_policy.arn
-}
