@@ -96,7 +96,7 @@ Want to connect, collab, or just vibe about infra?
 
 📫 **Email**: g.saffouri@outlook.com  
 🐙 **GitHub**: [@gsaffouri](https://github.com/gsaffouri)  
-📎 **LinkedIn**: [linkedin.com/in/YOUR_LINK](https://www.linkedin.com/in/saffouri/)
+📎 **LinkedIn**: [linkedin.com/in/saffouri](https://www.linkedin.com/in/saffouri/)
 
 ---
 
