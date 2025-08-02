@@ -16,9 +16,9 @@ provider "aws" {
   region = "us-east-1"
 }
 
-# Create an S3 bucket for Terraform state managements
+# Create an S3 bucket for Terraform state managements, static s3 naming to help with EKS deployment
 resource "aws_s3_bucket" "this_s3_bucket" {
-  bucket        = "my-tf-state-bucket-${random_id.this.hex}"
+  bucket        = "my-tf-state-bucket-08040627"
   force_destroy = true
 
   tags = {
