@@ -1,4 +1,4 @@
-# 🚀 Terraform AWS Bootstrap for EKS
+# 🚀 Terraform AWS Bootstrap for an EKS Deployment
 
 <p align="center">
   <a href="https://github.com/gsaffouri/aws-bootstrap/actions">
