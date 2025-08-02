@@ -10,10 +10,26 @@ module "oidc-github" {
 
 }
 
-# IAM Policy to allow managing OIDC Providers (for GitHub Actions, IRSA, etc.)
-resource "aws_iam_policy" "oidc_management_policy" {
-  name        = "AllowOIDCProviderManagement"
-  description = "Allows creating, reading, updating, and deleting OIDC providers"
+resource "aws_iam_role" "terraform_oidc_admin" {
+  name = "TerraformOIDCAdminRole"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Effect = "Allow",
+        Principal = {
+          AWS = "arn:aws:iam::058264314541:user/cloud_user"  # 👈 or another user/role who runs Terraform
+        },
+        Action = "sts:AssumeRole"
+      }
+    ]
+  })
+}
+
+resource "aws_iam_policy" "oidc_admin_policy" {
+  name        = "OIDCAdminPolicy"
+  description = "Allows managing IAM OIDC provider and related resources"
   policy      = jsonencode({
     Version = "2012-10-17",
     Statement = [
@@ -23,7 +39,11 @@ resource "aws_iam_policy" "oidc_management_policy" {
           "iam:CreateOpenIDConnectProvider",
           "iam:GetOpenIDConnectProvider",
           "iam:DeleteOpenIDConnectProvider",
-          "iam:UpdateOpenIDConnectProviderThumbprint"
+          "iam:UpdateOpenIDConnectProviderThumbprint",
+          "iam:CreateRole",
+          "iam:AttachRolePolicy",
+          "iam:PutRolePolicy",
+          "iam:TagOpenIDConnectProvider"
         ],
         Resource = "*"
       }
@@ -31,9 +51,9 @@ resource "aws_iam_policy" "oidc_management_policy" {
   })
 }
 
-# Attach the OIDC permissions policy to the IAM user (e.g., cloud_user)
-resource "aws_iam_user_policy_attachment" "cloud_user_oidc_attachment" {
-  user       = "cloud_user" 
-  policy_arn = aws_iam_policy.oidc_management_policy.arn
+resource "aws_iam_role_policy_attachment" "attach_oidc_admin_policy" {
+  role       = aws_iam_role.terraform_oidc_admin.name
+  policy_arn = aws_iam_policy.oidc_admin_policy.arn
 }
+
 
