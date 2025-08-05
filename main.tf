@@ -91,7 +91,7 @@ terraform {
     bucket         = "my-tf-state-bucket-08040627"
     key            = "aws-bootstrap/terraform.tfstate" # 👈 This is the path eks-deployment should use
     region         = "us-east-1"
-    dynamodb_table = "tf-state-locks-<INSERT_HEX_HERE>" # 👈 Replace with the actual hex value from `random_id.this.hex`
+    dynamodb_table = "tf-state-lock" 
     encrypt        = true
   }
 }
