@@ -1,4 +1,6 @@
-#!/bin/bash -e
+#!/bin/bash
 
-# Cleans up various files to prepare for a fresh deployment and prevent conflicts w/ the state file.
-rm -fr .terraform .terraform.lock.hcl terraform.tfstate terraform.tfstate.backup
+# Cleanup script for Terraform state and local files
+rm -f terraform.tfstate*
+rm -f .terraform.lock.hcl
+rm -rf .terraform

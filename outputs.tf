@@ -10,20 +10,19 @@ output "private_subnets" {
   value       = module.vpc.private_subnets
 }
 
-
 output "public_subnet_ids" {
   description = "List of public subnet IDs"
   value       = module.vpc.public_subnets
 }
 
-output "s3_bucket_name" {
+output "backend_bucket" {
   description = "Name of the S3 bucket used for remote state"
-  value       = aws_s3_bucket.this_s3_bucket.bucket
+  value       = aws_s3_bucket.tf_backend.bucket
 }
 
 output "dynamodb_table_name" {
   description = "Name of the DynamoDB table used for state locking"
-  value       = aws_dynamodb_table.terraform_locks.name
+  value       = aws_dynamodb_table.tf_lock.name
 }
 
 output "region" {
