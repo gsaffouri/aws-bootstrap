@@ -47,7 +47,7 @@ This repository bootstraps an AWS account using Terraform to prepare it for a fu
 ---
 
 ## 🧱 Module Integration Overview
-This repo (aws-bootstrap) sets up foundational AWS infrastructure — including the VPC, subnets, and remote state backend — which is then consumed by the (eks-deployment) repository via terraform_remote_state.
+This repo ([aws-bootstrap](https://github.com/gsaffouri/aws-bootstrap)) sets up foundational AWS infrastructure — including the VPC, subnets, and remote state backend — which is then consumed by the ([eks-deployment](https://github.com/gsaffouri/eks-deployment)) repository via `terraform_remote_state`.
 
 ---
 
