@@ -46,8 +46,6 @@ resource "aws_s3_bucket_versioning" "backend_versioning" {
   }
 }
 
-
-
 # VPC configuration 
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
