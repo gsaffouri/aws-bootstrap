@@ -38,3 +38,6 @@ terraform.rc
 
 # Ignore terraform.lock.hcl file
 .terraform.lock.hcl
+
+# Ignore main.tf file since it gets built by the local/remote files
+main.tf

@@ -20,15 +20,11 @@ terraform apply -auto-approve
 
 # Step 3: Get backend bucket name 
 BUCKET_NAME=$(terraform output -raw backend_bucket)
-echo "✅ Bucket created: $BUCKET_NAME"
+# echo "✅ Bucket created: $BUCKET_NAME"
 
 # Step 4: Replace main.tf with remote backend config
 echo "📦 Switching to remote backend config..."
 cp resources/main.remote.tf main.tf
-
-
-echo "Gracefully exiting..."
-exit 0
 
 # Step 5: Updating main.tf with the bucket name
 sed -i "s/UPDATE_ME/$BUCKET_NAME/g" main.tf
@@ -36,6 +32,9 @@ sed -i "s/UPDATE_ME/$BUCKET_NAME/g" main.tf
 # Step 6: Init remote backend and migrate state
 echo "🔁 Reinitializing Terraform with remote backend..."
 terraform init -force-copy
+
+echo "Gracefully exiting..."
+exit 0
 
 # Optional: clean up main.tf to leave repo spotless
 echo "🧽 Removing temporary working file main.tf..."
