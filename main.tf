@@ -1,5 +1,3 @@
-# main.local.tf — No backend block, used for initial infra creation
-
 terraform {
   required_providers {
     aws = {

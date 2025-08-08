@@ -1,8 +1,6 @@
-# main.remote.tf — uses the backend, gets copied after infra exists
-
 terraform {
   backend "s3" {
-    bucket         = "UPDATE_ME" # 🔥 gets replaced by script
+    bucket         = "UPDATE_ME" # <-- Replaced by deploy.sh
     key            = "aws-bootstrap/terraform.tfstate"
     region         = "us-east-1"
     encrypt        = true
@@ -11,7 +9,7 @@ terraform {
 
   required_providers {
     aws = {
-      source  = "hashicorp/aws"
+      source = "hashicorp/aws"
       version = "~> 6.0"
     }
   }

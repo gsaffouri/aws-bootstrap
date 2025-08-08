@@ -8,36 +8,36 @@ fi
 
 echo "🚀 Starting Terraform backend bootstrapping..."
 
-# Step 1: Clean workspace
+# Step 1: Clean old files
 echo "🧹 Cleaning previous Terraform junk..."
 rm -f main.tf terraform.tfstate* .terraform.lock.hcl
 rm -rf .terraform
 
-# Step 2: Copy main.local.tf to main.tf and apply locally
+# Step 2: Apply using local config
 echo "🔧 Bootstrapping backend infra with local config..."
 cp main.local.tf main.tf
 terraform init -backend=false
 terraform apply -auto-approve
 
-# Step 3: Get the created bucket name from output
+# Step 3: Get backend bucket name
 BUCKET_NAME=$(terraform output -raw backend_bucket)
-echo "✅ S3 bucket created: $BUCKET_NAME"
+echo "✅ Bucket created: $BUCKET_NAME"
 
-# Step 4: Replace local with remote config
+# Step 4: Replace main.tf with remote backend config
 echo "📦 Switching to remote backend config..."
 cp main.remote.tf main.tf
 sed -i "s/UPDATE_ME/$BUCKET_NAME/g" main.tf
 
-# Step 5: Delete main.local.tf to avoid duplicate resource errors
-echo "❌ Removing bootstrap config..."
+# 🚨 Step 5: REMOVE main.local.tf BEFORE next init
+echo "❌ Deleting main.local.tf to avoid duplicate resource errors..."
 rm -f main.local.tf
 
-# Step 6: Initialize remote backend and migrate state
-echo "🔁 Migrating state to S3 remote backend..."
+# Step 6: Init remote backend and migrate state
+echo "🔁 Reinitializing Terraform with remote backend..."
 terraform init -force-copy
 
-# Step 7: Optional cleanup
-echo "🧽 Removing working main.tf (optional)..."
+# Optional: clean up main.tf to leave repo spotless
+echo "🧽 Removing temporary working file main.tf..."
 rm -f main.tf
 
-echo "🎉 Done! Remote backend is live. State is migrated. You're a Terraform beast."
+echo "🎉 Backend bootstrapped, state migrated, Terraform is clean. All done!"
