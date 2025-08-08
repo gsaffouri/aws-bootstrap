@@ -8,7 +8,7 @@ fi
 
 echo "🚀 Starting Terraform backend bootstrapping..."
 
-# Step 1: Clean old files
+# Step 1: Clean old files and state
 echo "🧹 Cleaning previous Terraform junk..."
 rm -f main.tf terraform.tfstate* .terraform.lock.hcl
 rm -rf .terraform
