@@ -19,9 +19,9 @@ cp resources/main.local.tf main.tf
 terraform init #-backend=false
 terraform apply -auto-approve
 
-# Step 3: Get backend bucket name
-BUCKET_NAME=$(terraform output -raw backend_bucket)
-echo "✅ Bucket created: $BUCKET_NAME"
+# # Step 3: Get backend bucket name
+# BUCKET_NAME=$(terraform output -raw backend_bucket)
+# echo "✅ Bucket created: $BUCKET_NAME"
 
 echo "Gracefully exiting..."
 exit 0
