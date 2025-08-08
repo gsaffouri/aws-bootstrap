@@ -70,7 +70,3 @@ resource "aws_dynamodb_table" "tf_lock" {
     Name = "Terraform State Lock Table"
   }
 }
-
-# output "backend_bucket" {
-#   value = aws_s3_bucket.tf_backend.id
-# }
