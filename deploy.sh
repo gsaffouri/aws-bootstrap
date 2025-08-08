@@ -33,11 +33,4 @@ sed -i "s/UPDATE_ME/$BUCKET_NAME/g" main.tf
 echo "🔁 Reinitializing Terraform with remote backend..."
 terraform init -force-copy
 
-echo "Gracefully exiting..."
-exit 0
-
-# Optional: clean up main.tf to leave repo spotless
-echo "🧽 Removing temporary working file main.tf..."
-rm -f main.tf
-
 echo "🎉 Backend bootstrapped, state migrated, Terraform is clean. All done!"
