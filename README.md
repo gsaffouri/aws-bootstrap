@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://github.com/gsaffouri/aws-bootstrap/actions">
-    <img src="https://github.com/gsaffouri/aws-bootstrap/actions/workflows/lint.yml/badge.svg?branch=main&label=CI%2FCD&logo=githubactions&style=flat-square" alt="CI/CD">
+    <img src="[![Lint](https://github.com/gsaffouri/eks-deployment/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/gsaffouri/eks-deployment/actions/workflows/lint.yml)" alt="CI/CD">
   </a>
   <img src="https://img.shields.io/badge/Terraform-1.5%2B-blueviolet?logo=terraform&style=flat-square" alt="Terraform Version">
   <img src="https://img.shields.io/badge/AWS%20Ready-%E2%9C%85-green?logo=amazonaws&style=flat-square" alt="AWS Ready">
