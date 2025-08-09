@@ -29,3 +29,9 @@ output "region" {
   description = "AWS region in use"
   value       = "us-east-1"
 }
+
+output "eks_deployment_role_arn" {
+  description = "IAM Role ARN for eks-deployment GitHub Actions"
+  value       = module.oidc-github.iam_role_arn
+}
+
