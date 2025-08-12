@@ -41,3 +41,6 @@ terraform.rc
 
 # Ignore main.tf file since it gets built by the local/remote files
 main.tf
+
+# Ignore Terraform plan output
+tfplan
