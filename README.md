@@ -64,8 +64,9 @@ Make sure you have the following installed and configured:
 
 1. Clone this repo:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/tf-bootstrap.git
-   cd tf-bootstrap
+   git clone https://github.com/YOUR_USERNAME/aws-bootstrap.git
+   cd aws-bootstrap
+   ./deploy.sh -p
 
 ---
 
