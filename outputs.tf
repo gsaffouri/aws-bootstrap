@@ -35,4 +35,22 @@ output "eks_deployment_role_arn" {
   value       = module.oidc-github.iam_role_arn
 }
 
+# Get current region (no vars needed)
+data "aws_region" "current" {}
+
+# For eks-deployment/deploy.sh
+output "bootstrap_bucket" {
+  description = "Terraform state S3 bucket name"
+  value       = aws_s3_bucket.tf_backend.bucket
+}
+
+output "bootstrap_dynamodb_table" {
+  description = "Terraform state lock table name"
+  value       = aws_dynamodb_table.tf_lock.name
+}
+
+output "bootstrap_region" {
+  description = "AWS region"
+  value       = data.aws_region.current.name
+}
 
