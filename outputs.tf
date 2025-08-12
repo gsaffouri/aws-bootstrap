@@ -35,19 +35,4 @@ output "eks_deployment_role_arn" {
   value       = module.oidc-github.iam_role_arn
 }
 
-# Backend / region handoff for eks-deployment
-output "tf_state_bucket" {
-  value       = aws_s3_bucket.this_s3_bucket.bucket
-  description = "S3 bucket used for Terraform remote state"
-}
-
-output "tf_lock_table" {
-  value       = aws_dynamodb_table.this_lock_table.name
-  description = "DynamoDB table used for state locking"
-}
-
-output "aws_region" {
-  value       = var.aws_region != null ? var.aws_region : "us-east-1"
-  description = "Region used by bootstrap"
-}
 
