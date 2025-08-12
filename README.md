@@ -1,8 +1,8 @@
 # 🚀 Terraform AWS Bootstrap for an EKS Deployment
 
 <p align="center">
-  <a href="https://github.com/gsaffouri/aws-bootstrap/actions">
-    <img src="https://github.com/gsaffouri/aws-bootstrap/actions/workflows/lint.yml/badge.svg?branch=main&label=CI%2FCD&logo=githubactions&style=flat-square" alt="CI/CD">
+  <a href="https://github.com/gsaffouri/eks-deployment/actions/workflows/lint.yml">
+    <img src="https://github.com/gsaffouri/eks-deployment/actions/workflows/lint.yml/badge.svg?branch=main" alt="CI/CD">
   </a>
   <img src="https://img.shields.io/badge/Terraform-1.5%2B-blueviolet?logo=terraform&style=flat-square" alt="Terraform Version">
   <img src="https://img.shields.io/badge/AWS%20Ready-%E2%9C%85-green?logo=amazonaws&style=flat-square" alt="AWS Ready">
@@ -11,7 +11,6 @@
   <img src="https://img.shields.io/github/license/gsaffouri/aws-bootstrap?style=flat-square" alt="license">
   <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome">
 </p>
-
 
 ---
 
