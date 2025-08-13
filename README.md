@@ -55,14 +55,14 @@ This repo ([aws-bootstrap](https://github.com/gsaffouri/aws-bootstrap)) sets up 
 Make sure you have the following installed and configured:
 
 - [Terraform ≥ 1.5](https://www.terraform.io/downloads)
-- [AWS CLI](https://aws.amazon.com/cli/)
+- [AWS CLI](https://aws.amazon.com/cli/) v2
 - Properly configured AWS credentials (`~/.aws/credentials` or via environment variables)
 
 ---
 
 ## ⚙️ Usage
 
-1. Clone this repo:
+1. Fork this repo:
    ```bash
    git clone https://github.com/YOUR_USERNAME/aws-bootstrap.git
    cd aws-bootstrap
@@ -99,7 +99,7 @@ Let’s build something epic together 🚀
 
 Want to connect, collab, or just vibe about infra?
 
-📫 **Email**: g.saffouri@outlook.com  
+📫 **Email**: GitHub_X@outlook.com  
 🐙 **GitHub**: [@gsaffouri](https://github.com/gsaffouri)  
 📎 **LinkedIn**: [linkedin.com/in/saffouri](https://www.linkedin.com/in/saffouri/)
 
