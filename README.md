@@ -72,7 +72,7 @@ Make sure you have the following installed and configured:
 
 ## 👨‍💻 About the Author
 
-Built and maintained with 💚 by [gsaffouri](https://github.com/YOUR_USERNAME)  
+Built and maintained with 💚 by [gsaffouri](https://github.com/gsaffouri)  
 DevOps Engineer • Terraform Tamer • Kubernetes Commander 🐾
 
 ---
