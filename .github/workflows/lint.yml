@@ -1,32 +1,32 @@
 name: Lint Terraform
 
 on:
-  pull_request:
-    branches:
-      - main
   push:
-    branches:
-      - main
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
 
 jobs:
   terraform-lint:
     name: Terraform Lint & Validate
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.9.0
+          terraform_wrapper: false
 
-      - name: Terraform Init
-        run: terraform init -backend=false
+      - name: Init (no backend)
+        run: terraform init -backend=false -reconfigure
 
-      - name: Terraform Format Check
-        run: terraform fmt -check -recursive
+      - name: Format check
+        run: terraform fmt -recursive -check
 
-      - name: Terraform Validate
-        run: terraform validate
+      - name: Validate
+        run: terraform validate -no-color
